@@ -4,6 +4,11 @@ import com.allumettes.fr.view.View;
 import com.allumettes.fr.model.Model;
 import com.allumettes.fr.model.players.Player;
 
+/**
+ * Controlleur de l'application.
+ * @author ALPHANOR Pierre Rodney.
+ *
+ */
 public class Controller {
 
 	private View view;
@@ -16,13 +21,20 @@ public class Controller {
 		this.view.setController(this);
 		this.matchesNumber = 0;
 	}
-
+	
+	/**
+	 * Permet de lancer l'application.
+	 */
 	public void start() {
 
 		this.view.loadInitView();
 		this.view.setVisible(true);
 	}
-
+	
+	/**
+	 * Permet de lancer une partie.
+	 * @param matchesNumber Nombre d'allumette.
+	 */
 	public void clickBtStart(int matchesNumber) {
 
 		Player player1 = new Player("IA");
@@ -44,7 +56,11 @@ public class Controller {
 
 		this.view.loadTableGameView();
 	}
-
+	
+	/**
+	 * Retourne le modele.
+	 * @return Le modele.
+	 */
 	public Model getModel() {
 
 		return this.model;

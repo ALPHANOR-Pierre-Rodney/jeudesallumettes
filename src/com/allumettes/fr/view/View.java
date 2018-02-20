@@ -37,9 +37,9 @@ public class View extends JFrame {
 			this.gameTableView = new GameTableView(this.controller);
 		}
 		
-		this.gameTableView.setBounds(10, 10, 500, 160);
+		this.gameTableView.setBounds(10, 10, 850, 460);
 		this.add(this.gameTableView);
-		this.setPreferredSize(new Dimension(564, 248));
+		this.setPreferredSize(new Dimension(850, 448));
 		this.pack();
 	}
 

@@ -14,7 +14,11 @@ public class InitView extends JPanel implements ActionListener {
 	private JTextField tfMatchesNumber;
 	private JLabel lbErrors;
 	private Controller controller;
-
+	
+	/**
+	 * Constructeur de la InitView.
+	 * @param controller Controleur de l'application.
+	 */
 	public InitView(Controller controller) {
 		
 		super();

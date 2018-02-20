@@ -1,4 +1,4 @@
-package com.allumettes.fr.view.frames.profilplayer;
+package com.allumettes.fr.view.panels.profilplayer;
 
 public enum Face {
 

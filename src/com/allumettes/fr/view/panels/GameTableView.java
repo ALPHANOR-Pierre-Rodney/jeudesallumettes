@@ -10,6 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 
 import com.allumettes.fr.model.Model;
+import com.allumettes.fr.view.panels.matches.MatchesCanvas;
+import com.allumettes.fr.view.panels.profilplayer.ProfilPlayer;
 
 public class GameTableView extends JPanel implements ActionListener {
 
@@ -22,14 +24,14 @@ public class GameTableView extends JPanel implements ActionListener {
 		super();
 		this.setLayout(null);
 		Model model = controller.getModel();
+		
+		ProfilPlayer profilPlayer1 = new ProfilPlayer(model.getPlayer1());
+		profilPlayer1.setBounds(20,0,550,50);
+		this.add(profilPlayer1);
 
-		JLabel regle = new JLabel(model.getPlayer1().getName() + " " + model.getNumberOfMatches());
-		regle.setBounds(120,0,550,20);
-		this.add(regle);
-
-		JLabel lbMatchesNumber = new JLabel("Nombre d'allumette (20 à 100) :");
-		lbMatchesNumber.setBounds(15,50,250,20);
-		this.add(lbMatchesNumber);
+		MatchesCanvas matchesPanel = new MatchesCanvas(100,70);
+		matchesPanel.setBounds(15,100,750,90);
+		this.add(matchesPanel);
 
 		this.tfMatchesNumber = new JTextField("20");
 		this.tfMatchesNumber.setBounds(240,50,50,20);
@@ -41,7 +43,7 @@ public class GameTableView extends JPanel implements ActionListener {
 		btMatchesNumber.addActionListener(this);
 		this.add(btMatchesNumber);
 
-		this.lbErrors = new JLabel("de");
+		this.lbErrors = new JLabel();
 		this.lbErrors.setBounds(15,70,400,20);
 		lbErrors.setForeground (Color.red);
 		this.add(this.lbErrors);
